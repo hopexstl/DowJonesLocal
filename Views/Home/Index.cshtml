@@ -1,0 +1,150 @@
+﻿@model DowJones.Models.RiskCompSearchResponseModel
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <label for="Data_Type">Type:</label>
+        <input type="text" id="Data_Type" name="Data.Type" value="RiskEntities" />
+    </div>
+
+    <div>
+        <h3>Attributes</h3>
+        <div>
+            <label for="Sort">Sort:</label>
+            <input type="text" id="Sort" name="Data.Attributes.Sort" value="-PercentMatch" />
+        </div>
+
+        <div>
+            <h3>CountryName</h3>
+            <div>
+                <label for="CountryName">CountryName:</label>
+                <input type="text" id="CountryName" name="Data.RiskEntity.RiskEntityAttributes.CountryTerritoryName" value="CountryName" />
+            </div>
+        </div>
+
+        <div>
+            <h4>Paging</h4>
+            <label for="Offset">Offset:</label>
+            <input type="number" id="Offset" name="Data.Attributes.Paging.Offset" value="0" />
+
+            <label for="Limit">Limit:</label>
+            <input type="number" id="Limit" name="Data.Attributes.Paging.Limit" value="10" />
+        </div>
+
+        <div>
+            <h4>Filter Group And</h4>
+            <label for="GroupOperatorAnd">Group Operator:</label>
+            <input type="text" id="GroupOperatorAnd" name="Data.Attributes.FilterGroupAnd.GroupOperator" value="And" />
+
+            <div>
+                <h5>Filters</h5>
+                <label for="ContentSetAnd">Content Set:</label>
+                <input type="text" id="ContentSetAnd" name="Data.Attributes.FilterGroupAnd.Filters.Content_Set[0]" value="Watchlist" />
+
+                <label for="RecordTypesAnd">Record Types:</label>
+                <input type="text" id="RecordTypesAnd" name="Data.Attributes.FilterGroupAnd.Filters.Record_Types[0]" value="Person" />
+                <input type="text" id="RecordTypesAnd" name="Data.Attributes.FilterGroupAnd.Filters.Record_Types[1]" value="Entity" />
+
+                <label for="SearchKeywordTextAnd">Search Keyword Text:</label>
+                <input type="text" id="SearchKeywordTextAnd" name="Data.Attributes.FilterGroupAnd.Filters.SearchKeyword.Text" value="putin" />
+
+                <label for="SearchKeywordTypeAnd">Search Keyword Type:</label>
+                <input type="text" id="SearchKeywordTypeAnd" name="Data.Attributes.FilterGroupAnd.Filters.SearchKeyword.Type" value="Broad" />
+
+                <label for="SearchKeywordScopeAnd">Search Keyword Scope:</label>
+                <input type="text" id="SearchKeywordScopeAnd" name="Data.Attributes.FilterGroupAnd.Filters.SearchKeyword.Scope[0]" value="Name" />
+            </div>
+        </div>
+
+        <div>
+            <h4>Filter Group Or</h4>
+            <label for="GroupOperatorOr">Group Operator:</label>
+            <input type="text" id="GroupOperatorOr" name="Data.Attributes.FilterGroupOr.GroupOperator" value="Or" />
+
+            <div>
+                <h5>Filters</h5>
+                <label for="OccupationCategoryOperator">Occupation Category Operator:</label>
+                <input type="text" id="OccupationCategoryOperator" name="Data.Attributes.FilterGroupOr.Filters.OccupationCategory.Operator" value="OR" />
+
+                <label for="IsAdsrExcluded">Is ADSR Excluded:</label>
+                <input type="checkbox" id="IsAdsrExcluded" name="Data.Attributes.FilterGroupOr.Filters.OccupationCategory.Is_Adsr_Excluded" value="false" />
+
+                <label for="IsAllExcluded">Is All Excluded:</label>
+                <input type="checkbox" id="IsAllExcluded" name="Data.Attributes.FilterGroupOr.Filters.OccupationCategory.Is_All_Excluded" value="false" />
+
+                <label for="IsPepActive">Is PEP Active:</label>
+                <input type="text" id="IsPepActive" name="Data.Attributes.FilterGroupOr.Filters.OccupationCategory.Is_Pep_Active" value="true" />
+
+                <label for="PepInactiveDateYear">PEP Inactive Date Year:</label>
+                <input type="text" id="PepInactiveDateYear" name="Data.Attributes.FilterGroupOr.Filters.OccupationCategory.PepInactiveDateGte.Date.Year" value="2023" />
+
+                <label for="PepInactiveDateMonth">PEP Inactive Date Month:</label>
+                <input type="text" id="PepInactiveDateMonth" name="Data.Attributes.FilterGroupOr.Filters.OccupationCategory.PepInactiveDateGte.Date.Month" value="01" />
+
+                <label for="PepInactiveDateDay">PEP Inactive Date Day:</label>
+                <input type="text" id="PepInactiveDateDay" name="Data.Attributes.FilterGroupOr.Filters.OccupationCategory.PepInactiveDateGte.Date.Day" value="01" />
+
+                <label for="SanctionsListOperator">Sanctions List Operator:</label>
+                <input type="text" id="SanctionsListOperator" name="Data.Attributes.FilterGroupOr.Filters.SanctionsList.Operator" value="OR" />
+
+                <label for="IsAllExcludedSanctions">Is All Excluded:</label>
+                <input type="checkbox" id="IsAllExcludedSanctions" name="Data.Attributes.FilterGroupOr.Filters.SanctionsList.Is_All_Excluded" value="true" />
+
+                <label for="OtherOfficialListOperator">Other Official List Operator:</label>
+                <input type="text" id="OtherOfficialListOperator" name="Data.Attributes.FilterGroupOr.Filters.OtherOfficialList.Operator" value="OR" />
+
+                <label for="IsAllExcludedOfficial">Is All Excluded:</label>
+                <input type="checkbox" id="IsAllExcludedOfficial" name="Data.Attributes.FilterGroupOr.Filters.OtherOfficialList.Is_All_Excluded" value="true" />
+
+                <label for="OtherExclusionListOperator">Other Exclusion List Operator:</label>
+                <input type="text" id="OtherExclusionListOperator" name="Data.Attributes.FilterGroupOr.Filters.OtherExclusionList.Operator" value="OR" />
+
+                <label for="IsAllExcludedExclusion">Is All Excluded:</label>
+                <input type="checkbox" id="IsAllExcludedExclusion" name="Data.Attributes.FilterGroupOr.Filters.OtherExclusionList.Is_All_Excluded" value="true" />
+
+                <label for="SpecialInterestCodes">Special Interest Codes:</label>
+                <input type="number" id="SpecialInterestCodes1" name="Data.Attributes.FilterGroupOr.Filters.ContentCategory.SpecialInterest.Codes[0]" value="1006" />
+                <input type="number" id="SpecialInterestCodes2" name="Data.Attributes.FilterGroupOr.Filters.ContentCategory.SpecialInterest.Codes[1]" value="1002" />
+
+                <label for="SpecialInterestOperator">Special Interest Operator:</label>
+                <input type="text" id="SpecialInterestOperator" name="Data.Attributes.FilterGroupOr.Filters.ContentCategory.SpecialInterest.Operator" value="OR" />
+
+                <label for="SpecialInterestIsAllExcluded">Is All Excluded:</label>
+                <input type="checkbox" id="SpecialInterestIsAllExcluded" name="Data.Attributes.FilterGroupOr.Filters.ContentCategory.SpecialInterest.Is_All_Excluded" value="false" />
+
+                <label for="SpecialInterestIsSorActive">Is SOR Active:</label>
+                <input type="checkbox" id="SpecialInterestIsSorActive" name="Data.Attributes.FilterGroupOr.Filters.ContentCategory.SpecialInterest.Is_Sor_Active" value="true" />
+
+                <label for="AdverseMediaOperator">Adverse Media Operator:</label>
+                <input type="text" id="AdverseMediaOperator" name="Data.Attributes.FilterGroupOr.Filters.ContentCategory.AdverseMedia.Operator" value="OR" />
+
+                <label for="AdverseMediaIsAllExcluded">Is All Excluded:</label>
+                <input type="text" id="AdverseMediaIsAllExcluded" name="Data.Attributes.FilterGroupOr.Filters.ContentCategory.AdverseMedia.Is_All_Excluded" value="false" />
+
+                <label for="LocationOperator">Location Operator:</label>
+                <input type="text" id="LocationOperator" name="Data.Attributes.FilterGroupOr.Filters.ContentCategory.Location.Operator" value="OR" />
+
+                <label for="LocationIsAllExcluded">Is All Excluded:</label>
+                <input type="text" id="LocationIsAllExcluded" name="Data.Attributes.FilterGroupOr.Filters.ContentCategory.Location.Is_All_Excluded" value="false" />
+
+                <label for="HrfCategoryOperator">HRF Category Operator:</label>
+                <input type="text" id="HrfCategoryOperator" name="Data.Attributes.FilterGroupOr.Filters.HrfCategory.Operator" value="OR" />
+
+                <label for="HrfCategoryIsAllExcluded">Is All Excluded:</label>
+                <input type="checkbox" id="HrfCategoryIsAllExcluded" name="Data.Attributes.FilterGroupOr.Filters.HrfCategory.Is_All_Excluded" value="true" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit">Search</button>
+    </div>
+}

@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Add DJ Config";
+}
+
+<h2>Add DJ Config</h2>
+
+<form id="addDjConfigForm">
+    <div>
+        <label for="mandantid">Mandant ID:</label>
+        <input type="text" id="mandantid" name="mandantid" required />
+    </div>
+    <div>
+        <label for="searchtype">Search Type:</label>
+        <input type="text" id="searchtype" name="searchtype" required />
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<div id="responseMessage"></div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#addDjConfigForm').on('submit', function(event) {
+                event.preventDefault();
+
+                var mandantid = $('#mandantid').val();
+                var searchtype = $('#searchtype').val();
+
+                $.ajax({
+                    url: '@Url.Action("Add_DJ_Config", "Home")',
+                    type: 'POST',
+                    data: {
+                        mandantid: mandantid,
+                        searchtype: searchtype
+                    },
+                    success: function(response) {
+                        $('#responseMessage').text('Configuration added successfully!');
+                    },
+                    error: function(xhr, status, error) {
+                        $('#responseMessage').text('Error: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+}

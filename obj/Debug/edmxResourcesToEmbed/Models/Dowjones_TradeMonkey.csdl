@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dowjones_TrademonkeyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="dowjones_Search_Config_Single_Search">
+    <Key>
+      <PropertyRef Name="SearchID" />
+    </Key>
+    <Property Name="SearchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MentodId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NameSearch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonSearch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EnitySearch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDTypeSearch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Config_Date" Type="DateTime" Precision="3" />
+    <Property Name="SearchType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+    <Property Name="updated_by" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="dowjones_Search_Result_Details">
+    <Key>
+      <PropertyRef Name="SearchAutoID" />
+    </Key>
+    <Property Name="MentodId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="metacount" Type="Int32" />
+    <Property Name="Iteraion" Type="Int32" />
+    <Property Name="PEid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="sType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="attrType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="attrPrimary_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="attrTitle" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="attrCountryterritorycode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="attrCountry_territory_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="attrGender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="attrScore" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="attrIcon_hints" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="atteCountries_territories" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="attrdate_of_birth" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Searchoption" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SearchKeyword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SearchType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SearchContentSet" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SearchRecordType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Pincode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SearchResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SearchWay" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FoundStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BatchName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SearchAutoID" Type="Decimal" Precision="20" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SearchRegin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SearchUniqueID" Type="Decimal" Precision="20" Scale="0" />
+    <Property Name="searchdate" Type="DateTime" Precision="3" />
+    <Property Name="attraltername" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="downjonws_check_countrylist">
+    <Key>
+      <PropertyRef Name="Unique_ID" />
+    </Key>
+    <Property Name="MasterName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="descriptor" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="iso_alpha2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="iso_alpha3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="downjonws_flag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Unique_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityContainer Name="dowjones_TrademonkeyEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dowjones_Search_Config_Single_Search" EntityType="Self.dowjones_Search_Config_Single_Search" />
+    <EntitySet Name="dowjones_Search_Result_Details" EntityType="Self.dowjones_Search_Result_Details" />
+    <EntitySet Name="downjonws_check_countrylist" EntityType="Self.downjonws_check_countrylist" />
+  </EntityContainer>
+</Schema>

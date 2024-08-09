@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EdecApp_Trade_MonkeyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin_Mandant">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Aktiv" Type="Boolean" />
+    <Property Name="Company_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Street_House_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Nation" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Datecreated" Type="DateTime" Precision="0" />
+    <Property Name="Createdby" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Datemodified" Type="DateTime" Precision="0" />
+    <Property Name="Modifiedby" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Unique_ID" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="Mandant_Type" Type="Boolean" />
+    <Property Name="Plugin_Access" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="Client_Id" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Operating_mode" Type="Int32" />
+    <Property Name="RequestorTIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="two_factor_authentication" Type="Int32" />
+    <Property Name="addressSupplement1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="addressSupplement2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="addressSupplement3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="unique_mandantid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Dowjones_Record_Setting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Total_Count" Type="Int32" />
+    <Property Name="Remaining_Count" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="Creared_by" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Created_Date" Type="DateTime" Precision="3" />
+    <Property Name="Modified_By" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Modified_Date" Type="DateTime" Precision="3" />
+    <Property Name="Mandantid" Type="Int32" />
+    <Property Name="Mandant_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SearchStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="used_count" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Error_Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Accountno" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Requstertin" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Mandant_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Mandant_Id" Type="Int64" />
+    <Property Name="Error_Messages" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Doc_Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Date_Created" Type="DateTime" Precision="0" />
+    <Property Name="UserID" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="TimeStamp" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SearchLookup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferenceNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="MandantId" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="search_keyword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ort" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Plz" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Land" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="listStatus" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Reasons" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SalseTaxId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UserWhiteSearchStatus" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="statusInApplication" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="statusInUser" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="searchedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="MandantName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="batchname" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="deleteStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ResultList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ResultListDisp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="eVVreset" Type="Boolean" />
+    <Property Name="gep_List" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WLsearchdate" Type="DateTime" Precision="3" />
+    <Property Name="ExistingWl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="File_Mode" Type="Int32" />
+    <Property Name="ResultXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="searchtype" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="batchid" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dowjones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dowjones_RecStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_Responsexml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SanList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SanListIndi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fuzzyquality" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Exist_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WB_deletedby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WB_deleteddate" Type="DateTime" Precision="3" />
+    <Property Name="workflowFlg" Type="Int32" />
+    <Property Name="San_Type" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="VesselRegistration" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="VesselMMSI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Callsign" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Aircraft_SerialNumber" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="AircraftModel" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Sonderstatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="userResultAddr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserResultQulle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="userResSanction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="userResultAltName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="userResStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TotalDaten" Type="Int32" />
+    <Property Name="Schlagwort" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Status_Anderung" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="AktiveListen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="typeId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DowJonesReasons" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="whitelistApistatus" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Exist_Dowjones_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="apiseracheddata" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Wf_Autoupdatestatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Scorepercentage" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="sanTransaction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sondstatus_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Transaction_dj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bemerkung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SanMatchword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="history" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="unique_mandantid" Type="Int32" />
+    <Property Name="searchtype_dj" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Result_Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SWIFTCode" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Selected_Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MandantID" Type="Int32" />
+    <Property Name="Operating_mode" Type="Int32" />
+    <Property Name="Client_ID" Type="Int32" />
+    <Property Name="Accountname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="User_Role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LoginTime" Type="DateTime" Precision="3" />
+    <Property Name="Mandant_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="OTP_Verified" Type="Int32" />
+    <Property Name="consigneeTin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="alt_select_lan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Userthreshold">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NamePercentage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="StreetPercentage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CityPercentage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MandantId" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="updateddate" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="evv_startdate" Type="DateTime" Precision="3" />
+    <Property Name="evv_endate" Type="DateTime" Precision="3" />
+    <Property Name="Contain_Search" Type="Boolean" />
+    <Property Name="Normal_Search" Type="Boolean" />
+    <Property Name="evv_reset_startdate" Type="DateTime" Precision="3" />
+    <Property Name="evv_ResetEndDate" Type="DateTime" Precision="3" />
+    <Property Name="evv_imp_startdate" Type="DateTime" Precision="3" />
+    <Property Name="evv_imp_enddate" Type="DateTime" Precision="3" />
+    <Property Name="dispsettings" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Dow_Jones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EvvDisplaySetting" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="EvvFuzzy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="EdecDisplaySetting" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="EdecFuzzy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ApiDisplaySetting" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ApiFuzzy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Scorepercentage" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="edec_date" Type="DateTime" Precision="3" />
+    <Property Name="SanApi_date" Type="DateTime" Precision="3" />
+    <Property Name="edec_Score" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="SanApi_Score" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="evv_Active" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="edec_Active" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="sanApi_Active" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Transaktion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="unique_mandantid" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="EdecApp_Trade_MonkeyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admin_Mandant" EntityType="Self.Admin_Mandant" />
+    <EntitySet Name="Dowjones_Record_Setting" EntityType="Self.Dowjones_Record_Setting" />
+    <EntitySet Name="Error_Log" EntityType="Self.Error_Log" />
+    <EntitySet Name="SearchLookup" EntityType="Self.SearchLookup" />
+    <EntitySet Name="Selected_Users" EntityType="Self.Selected_Users" />
+    <EntitySet Name="Userthreshold" EntityType="Self.Userthreshold" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EdecApp_Trade_MonkeyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin_Mandant">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="varchar" MaxLength="250" />
+          <Property Name="Aktiv" Type="bit" />
+          <Property Name="Company_name" Type="varchar(max)" />
+          <Property Name="Street_House_number" Type="varchar" MaxLength="250" />
+          <Property Name="City" Type="varchar" MaxLength="250" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="100" />
+          <Property Name="Nation" Type="varchar" MaxLength="250" />
+          <Property Name="Datecreated" Type="date" />
+          <Property Name="Createdby" Type="varchar" MaxLength="250" />
+          <Property Name="Datemodified" Type="date" />
+          <Property Name="Modifiedby" Type="varchar" MaxLength="250" />
+          <Property Name="Unique_ID" Type="nvarchar" MaxLength="120" />
+          <Property Name="Mandant_Type" Type="bit" />
+          <Property Name="Plugin_Access" Type="nvarchar" MaxLength="120" />
+          <Property Name="Client_Id" Type="varchar" MaxLength="250" />
+          <Property Name="Operating_mode" Type="int" />
+          <Property Name="RequestorTIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="two_factor_authentication" Type="int" />
+          <Property Name="addressSupplement1" Type="nvarchar" MaxLength="250" />
+          <Property Name="addressSupplement2" Type="nvarchar" MaxLength="250" />
+          <Property Name="addressSupplement3" Type="nvarchar" MaxLength="250" />
+          <Property Name="unique_mandantid" Type="int" />
+        </EntityType>
+        <EntityType Name="Dowjones_Record_Setting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Total_Count" Type="int" />
+          <Property Name="Remaining_Count" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="Creared_by" Type="nvarchar" MaxLength="250" />
+          <Property Name="Created_Date" Type="datetime" />
+          <Property Name="Modified_By" Type="nvarchar" MaxLength="250" />
+          <Property Name="Modified_Date" Type="datetime" />
+          <Property Name="Mandantid" Type="int" />
+          <Property Name="Mandant_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="SearchStatus" Type="varchar" MaxLength="100" />
+          <Property Name="used_count" Type="int" />
+        </EntityType>
+        <EntityType Name="Error_Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Accountno" Type="nvarchar" MaxLength="150" />
+          <Property Name="Requstertin" Type="nvarchar" MaxLength="150" />
+          <Property Name="Mandant_Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Mandant_Id" Type="bigint" />
+          <Property Name="Error_Messages" Type="varchar(max)" />
+          <Property Name="Doc_Type" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Date_Created" Type="date" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="120" />
+          <Property Name="TimeStamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SearchLookup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReferenceNumber" Type="varchar" MaxLength="150" />
+          <Property Name="MandantId" Type="varchar" MaxLength="150" />
+          <Property Name="UserName" Type="varchar(max)" />
+          <Property Name="search_keyword" Type="nvarchar(max)" />
+          <Property Name="Street" Type="nvarchar(max)" />
+          <Property Name="Ort" Type="nvarchar" MaxLength="250" />
+          <Property Name="Plz" Type="nvarchar" MaxLength="250" />
+          <Property Name="Land" Type="nvarchar" MaxLength="300" />
+          <Property Name="listStatus" Type="varchar" MaxLength="250" />
+          <Property Name="Reasons" Type="varchar(max)" />
+          <Property Name="SalseTaxId" Type="varchar" MaxLength="250" />
+          <Property Name="UserWhiteSearchStatus" Type="varchar" MaxLength="250" />
+          <Property Name="statusInApplication" Type="varchar" MaxLength="250" />
+          <Property Name="statusInUser" Type="varchar" MaxLength="250" />
+          <Property Name="searchedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="250" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="Status" Type="varchar" MaxLength="250" />
+          <Property Name="MandantName" Type="nvarchar(max)" />
+          <Property Name="batchname" Type="nvarchar" MaxLength="200" />
+          <Property Name="deleteStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResultList" Type="nvarchar(max)" />
+          <Property Name="ResultListDisp" Type="nvarchar(max)" />
+          <Property Name="eVVreset" Type="bit" />
+          <Property Name="gep_List" Type="nvarchar(max)" />
+          <Property Name="WLsearchdate" Type="datetime" />
+          <Property Name="ExistingWl" Type="varchar" MaxLength="10" />
+          <Property Name="File_Mode" Type="int" />
+          <Property Name="ResultXml" Type="nvarchar(max)" />
+          <Property Name="searchtype" Type="nvarchar" MaxLength="100" />
+          <Property Name="batchid" Type="nvarchar" MaxLength="200" />
+          <Property Name="SAN" Type="varchar" MaxLength="50" />
+          <Property Name="dowjones" Type="nvarchar(max)" />
+          <Property Name="dowjones_RecStatus" Type="varchar" MaxLength="50" />
+          <Property Name="User_Responsexml" Type="nvarchar(max)" />
+          <Property Name="SanList" Type="nvarchar(max)" />
+          <Property Name="SanListIndi" Type="nvarchar(max)" />
+          <Property Name="Fuzzyquality" Type="nvarchar" MaxLength="100" />
+          <Property Name="Exist_Reason" Type="nvarchar(max)" />
+          <Property Name="WB_deletedby" Type="nvarchar(max)" />
+          <Property Name="WB_deleteddate" Type="datetime" />
+          <Property Name="workflowFlg" Type="int" />
+          <Property Name="San_Type" Type="nvarchar" MaxLength="200" />
+          <Property Name="VesselRegistration" Type="nvarchar" MaxLength="500" />
+          <Property Name="VesselMMSI" Type="nvarchar" MaxLength="500" />
+          <Property Name="Callsign" Type="nvarchar" MaxLength="500" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+          <Property Name="Aircraft_SerialNumber" Type="nvarchar" MaxLength="300" />
+          <Property Name="AircraftModel" Type="nvarchar" MaxLength="300" />
+          <Property Name="Sonderstatus" Type="nvarchar(max)" />
+          <Property Name="userResultAddr" Type="nvarchar(max)" />
+          <Property Name="UserResultQulle" Type="nvarchar(max)" />
+          <Property Name="userResSanction" Type="nvarchar(max)" />
+          <Property Name="userResultAltName" Type="nvarchar(max)" />
+          <Property Name="userResStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="TotalDaten" Type="int" />
+          <Property Name="Schlagwort" Type="nvarchar" MaxLength="40" />
+          <Property Name="Status_Anderung" Type="nvarchar" MaxLength="40" />
+          <Property Name="AktiveListen" Type="nvarchar(max)" />
+          <Property Name="typeId" Type="nvarchar" MaxLength="500" />
+          <Property Name="DowJonesReasons" Type="varchar(max)" />
+          <Property Name="whitelistApistatus" Type="varchar" MaxLength="300" />
+          <Property Name="Exist_Dowjones_Reason" Type="varchar(max)" />
+          <Property Name="apiseracheddata" Type="varchar" MaxLength="100" />
+          <Property Name="Wf_Autoupdatestatus" Type="varchar" MaxLength="100" />
+          <Property Name="Scorepercentage" Type="nvarchar" MaxLength="40" />
+          <Property Name="sanTransaction" Type="nvarchar(max)" />
+          <Property Name="Sondstatus_text" Type="nvarchar(max)" />
+          <Property Name="Transaction_dj" Type="nvarchar(max)" />
+          <Property Name="Bemerkung" Type="nvarchar(max)" />
+          <Property Name="sender" Type="nvarchar(max)" />
+          <Property Name="SanMatchword" Type="nvarchar(max)" />
+          <Property Name="history" Type="nvarchar(max)" />
+          <Property Name="unique_mandantid" Type="int" />
+          <Property Name="searchtype_dj" Type="varchar" MaxLength="250" />
+          <Property Name="Result_Country" Type="nvarchar(max)" />
+          <Property Name="SWIFTCode" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Selected_Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="varchar(max)" />
+          <Property Name="MandantID" Type="int" />
+          <Property Name="Operating_mode" Type="int" />
+          <Property Name="Client_ID" Type="int" />
+          <Property Name="Accountname" Type="varchar(max)" />
+          <Property Name="User_Role" Type="varchar" MaxLength="20" />
+          <Property Name="LoginTime" Type="datetime" />
+          <Property Name="Mandant_Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Username" Type="nvarchar" MaxLength="250" />
+          <Property Name="OTP_Verified" Type="int" />
+          <Property Name="consigneeTin" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Image" Type="nvarchar(max)" />
+          <Property Name="alt_select_lan" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Userthreshold">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NamePercentage" Type="nvarchar" MaxLength="250" />
+          <Property Name="StreetPercentage" Type="nvarchar" MaxLength="250" />
+          <Property Name="CityPercentage" Type="nvarchar" MaxLength="250" />
+          <Property Name="MandantId" Type="nvarchar" MaxLength="300" />
+          <Property Name="UserId" Type="nvarchar(max)" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="updateddate" Type="datetime" />
+          <Property Name="status" Type="bit" />
+          <Property Name="evv_startdate" Type="datetime" />
+          <Property Name="evv_endate" Type="datetime" />
+          <Property Name="Contain_Search" Type="bit" />
+          <Property Name="Normal_Search" Type="bit" />
+          <Property Name="evv_reset_startdate" Type="datetime" />
+          <Property Name="evv_ResetEndDate" Type="datetime" />
+          <Property Name="evv_imp_startdate" Type="datetime" />
+          <Property Name="evv_imp_enddate" Type="datetime" />
+          <Property Name="dispsettings" Type="varchar" MaxLength="500" />
+          <Property Name="Dow_Jones" Type="varchar" MaxLength="50" />
+          <Property Name="EvvDisplaySetting" Type="varchar" MaxLength="500" />
+          <Property Name="EvvFuzzy" Type="nvarchar" MaxLength="250" />
+          <Property Name="EdecDisplaySetting" Type="varchar" MaxLength="500" />
+          <Property Name="EdecFuzzy" Type="nvarchar" MaxLength="250" />
+          <Property Name="ApiDisplaySetting" Type="varchar" MaxLength="500" />
+          <Property Name="ApiFuzzy" Type="nvarchar" MaxLength="250" />
+          <Property Name="Scorepercentage" Type="nvarchar" MaxLength="40" />
+          <Property Name="edec_date" Type="datetime" />
+          <Property Name="SanApi_date" Type="datetime" />
+          <Property Name="edec_Score" Type="nvarchar" MaxLength="40" />
+          <Property Name="SanApi_Score" Type="nvarchar" MaxLength="40" />
+          <Property Name="evv_Active" Type="varchar" MaxLength="10" />
+          <Property Name="edec_Active" Type="varchar" MaxLength="40" />
+          <Property Name="sanApi_Active" Type="varchar" MaxLength="40" />
+          <Property Name="Transaktion" Type="nvarchar(max)" />
+          <Property Name="unique_mandantid" Type="int" />
+        </EntityType>
+        <EntityContainer Name="EdecApp_Trade_MonkeyModelStoreContainer">
+          <EntitySet Name="Admin_Mandant" EntityType="Self.Admin_Mandant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dowjones_Record_Setting" EntityType="Self.Dowjones_Record_Setting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Error_Log" EntityType="Self.Error_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SearchLookup" EntityType="Self.SearchLookup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Selected_Users" EntityType="Self.Selected_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Userthreshold" EntityType="Self.Userthreshold" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EdecApp_Trade_MonkeyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin_Mandant">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Aktiv" Type="Boolean" />
+          <Property Name="Company_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Street_House_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nation" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Datecreated" Type="DateTime" Precision="0" />
+          <Property Name="Createdby" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Datemodified" Type="DateTime" Precision="0" />
+          <Property Name="Modifiedby" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Unique_ID" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="Mandant_Type" Type="Boolean" />
+          <Property Name="Plugin_Access" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="Client_Id" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Operating_mode" Type="Int32" />
+          <Property Name="RequestorTIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="two_factor_authentication" Type="Int32" />
+          <Property Name="addressSupplement1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="addressSupplement2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="addressSupplement3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="unique_mandantid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Dowjones_Record_Setting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Total_Count" Type="Int32" />
+          <Property Name="Remaining_Count" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="Creared_by" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Modified_Date" Type="DateTime" Precision="3" />
+          <Property Name="Mandantid" Type="Int32" />
+          <Property Name="Mandant_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SearchStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="used_count" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Error_Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Accountno" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Requstertin" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Mandant_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Mandant_Id" Type="Int64" />
+          <Property Name="Error_Messages" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Doc_Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Date_Created" Type="DateTime" Precision="0" />
+          <Property Name="UserID" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="TimeStamp" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SearchLookup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReferenceNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="MandantId" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="search_keyword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ort" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Plz" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Land" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="listStatus" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Reasons" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SalseTaxId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UserWhiteSearchStatus" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="statusInApplication" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="statusInUser" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="searchedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="MandantName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="batchname" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="deleteStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResultList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResultListDisp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="eVVreset" Type="Boolean" />
+          <Property Name="gep_List" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WLsearchdate" Type="DateTime" Precision="3" />
+          <Property Name="ExistingWl" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="File_Mode" Type="Int32" />
+          <Property Name="ResultXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="searchtype" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="batchid" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dowjones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dowjones_RecStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Responsexml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SanList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SanListIndi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fuzzyquality" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Exist_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WB_deletedby" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WB_deleteddate" Type="DateTime" Precision="3" />
+          <Property Name="workflowFlg" Type="Int32" />
+          <Property Name="San_Type" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VesselRegistration" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VesselMMSI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Callsign" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Aircraft_SerialNumber" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="AircraftModel" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Sonderstatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="userResultAddr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserResultQulle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="userResSanction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="userResultAltName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="userResStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TotalDaten" Type="Int32" />
+          <Property Name="Schlagwort" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Anderung" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="AktiveListen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="typeId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DowJonesReasons" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="whitelistApistatus" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Exist_Dowjones_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="apiseracheddata" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Wf_Autoupdatestatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Scorepercentage" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="sanTransaction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sondstatus_text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Transaction_dj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Bemerkung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SanMatchword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="history" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="unique_mandantid" Type="Int32" />
+          <Property Name="searchtype_dj" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Result_Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SWIFTCode" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Selected_Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MandantID" Type="Int32" />
+          <Property Name="Operating_mode" Type="Int32" />
+          <Property Name="Client_ID" Type="Int32" />
+          <Property Name="Accountname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="User_Role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LoginTime" Type="DateTime" Precision="3" />
+          <Property Name="Mandant_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OTP_Verified" Type="Int32" />
+          <Property Name="consigneeTin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="alt_select_lan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Userthreshold">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NamePercentage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="StreetPercentage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CityPercentage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MandantId" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="updateddate" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="evv_startdate" Type="DateTime" Precision="3" />
+          <Property Name="evv_endate" Type="DateTime" Precision="3" />
+          <Property Name="Contain_Search" Type="Boolean" />
+          <Property Name="Normal_Search" Type="Boolean" />
+          <Property Name="evv_reset_startdate" Type="DateTime" Precision="3" />
+          <Property Name="evv_ResetEndDate" Type="DateTime" Precision="3" />
+          <Property Name="evv_imp_startdate" Type="DateTime" Precision="3" />
+          <Property Name="evv_imp_enddate" Type="DateTime" Precision="3" />
+          <Property Name="dispsettings" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Dow_Jones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EvvDisplaySetting" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EvvFuzzy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="EdecDisplaySetting" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="EdecFuzzy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ApiDisplaySetting" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ApiFuzzy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Scorepercentage" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="edec_date" Type="DateTime" Precision="3" />
+          <Property Name="SanApi_date" Type="DateTime" Precision="3" />
+          <Property Name="edec_Score" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="SanApi_Score" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="evv_Active" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="edec_Active" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="sanApi_Active" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Transaktion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="unique_mandantid" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="EdecApp_Trade_MonkeyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin_Mandant" EntityType="Self.Admin_Mandant" />
+          <EntitySet Name="Dowjones_Record_Setting" EntityType="Self.Dowjones_Record_Setting" />
+          <EntitySet Name="Error_Log" EntityType="Self.Error_Log" />
+          <EntitySet Name="SearchLookup" EntityType="Self.SearchLookup" />
+          <EntitySet Name="Selected_Users" EntityType="Self.Selected_Users" />
+          <EntitySet Name="Userthreshold" EntityType="Self.Userthreshold" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EdecApp_Trade_MonkeyModelStoreContainer" CdmEntityContainer="EdecApp_Trade_MonkeyEntities">
+          <EntitySetMapping Name="Admin_Mandant">
+            <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.Admin_Mandant">
+              <MappingFragment StoreEntitySet="Admin_Mandant">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Aktiv" ColumnName="Aktiv" />
+                <ScalarProperty Name="Company_name" ColumnName="Company_name" />
+                <ScalarProperty Name="Street_House_number" ColumnName="Street_House_number" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Nation" ColumnName="Nation" />
+                <ScalarProperty Name="Datecreated" ColumnName="Datecreated" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Datemodified" ColumnName="Datemodified" />
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="Unique_ID" ColumnName="Unique_ID" />
+                <ScalarProperty Name="Mandant_Type" ColumnName="Mandant_Type" />
+                <ScalarProperty Name="Plugin_Access" ColumnName="Plugin_Access" />
+                <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+                <ScalarProperty Name="Operating_mode" ColumnName="Operating_mode" />
+                <ScalarProperty Name="RequestorTIN" ColumnName="RequestorTIN" />
+                <ScalarProperty Name="two_factor_authentication" ColumnName="two_factor_authentication" />
+                <ScalarProperty Name="addressSupplement1" ColumnName="addressSupplement1" />
+                <ScalarProperty Name="addressSupplement2" ColumnName="addressSupplement2" />
+                <ScalarProperty Name="addressSupplement3" ColumnName="addressSupplement3" />
+                <ScalarProperty Name="unique_mandantid" ColumnName="unique_mandantid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dowjones_Record_Setting">
+            <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.Dowjones_Record_Setting">
+              <MappingFragment StoreEntitySet="Dowjones_Record_Setting">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Total_Count" ColumnName="Total_Count" />
+                <ScalarProperty Name="Remaining_Count" ColumnName="Remaining_Count" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Creared_by" ColumnName="Creared_by" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+                <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+                <ScalarProperty Name="Mandantid" ColumnName="Mandantid" />
+                <ScalarProperty Name="Mandant_name" ColumnName="Mandant_name" />
+                <ScalarProperty Name="SearchStatus" ColumnName="SearchStatus" />
+                <ScalarProperty Name="used_count" ColumnName="used_count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Error_Log">
+            <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.Error_Log">
+              <MappingFragment StoreEntitySet="Error_Log">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Accountno" ColumnName="Accountno" />
+                <ScalarProperty Name="Requstertin" ColumnName="Requstertin" />
+                <ScalarProperty Name="Mandant_Name" ColumnName="Mandant_Name" />
+                <ScalarProperty Name="Mandant_Id" ColumnName="Mandant_Id" />
+                <ScalarProperty Name="Error_Messages" ColumnName="Error_Messages" />
+                <ScalarProperty Name="Doc_Type" ColumnName="Doc_Type" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date_Created" ColumnName="Date_Created" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SearchLookup">
+            <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.SearchLookup">
+              <MappingFragment StoreEntitySet="SearchLookup">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+                <ScalarProperty Name="MandantId" ColumnName="MandantId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="search_keyword" ColumnName="search_keyword" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Ort" ColumnName="Ort" />
+                <ScalarProperty Name="Plz" ColumnName="Plz" />
+                <ScalarProperty Name="Land" ColumnName="Land" />
+                <ScalarProperty Name="listStatus" ColumnName="listStatus" />
+                <ScalarProperty Name="Reasons" ColumnName="Reasons" />
+                <ScalarProperty Name="SalseTaxId" ColumnName="SalseTaxId" />
+                <ScalarProperty Name="UserWhiteSearchStatus" ColumnName="UserWhiteSearchStatus" />
+                <ScalarProperty Name="statusInApplication" ColumnName="statusInApplication" />
+                <ScalarProperty Name="statusInUser" ColumnName="statusInUser" />
+                <ScalarProperty Name="searchedDate" ColumnName="searchedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MandantName" ColumnName="MandantName" />
+                <ScalarProperty Name="batchname" ColumnName="batchname" />
+                <ScalarProperty Name="deleteStatus" ColumnName="deleteStatus" />
+                <ScalarProperty Name="ResultList" ColumnName="ResultList" />
+                <ScalarProperty Name="ResultListDisp" ColumnName="ResultListDisp" />
+                <ScalarProperty Name="eVVreset" ColumnName="eVVreset" />
+                <ScalarProperty Name="gep_List" ColumnName="gep_List" />
+                <ScalarProperty Name="WLsearchdate" ColumnName="WLsearchdate" />
+                <ScalarProperty Name="ExistingWl" ColumnName="ExistingWl" />
+                <ScalarProperty Name="File_Mode" ColumnName="File_Mode" />
+                <ScalarProperty Name="ResultXml" ColumnName="ResultXml" />
+                <ScalarProperty Name="searchtype" ColumnName="searchtype" />
+                <ScalarProperty Name="batchid" ColumnName="batchid" />
+                <ScalarProperty Name="SAN" ColumnName="SAN" />
+                <ScalarProperty Name="dowjones" ColumnName="dowjones" />
+                <ScalarProperty Name="dowjones_RecStatus" ColumnName="dowjones_RecStatus" />
+                <ScalarProperty Name="User_Responsexml" ColumnName="User_Responsexml" />
+                <ScalarProperty Name="SanList" ColumnName="SanList" />
+                <ScalarProperty Name="SanListIndi" ColumnName="SanListIndi" />
+                <ScalarProperty Name="Fuzzyquality" ColumnName="Fuzzyquality" />
+                <ScalarProperty Name="Exist_Reason" ColumnName="Exist_Reason" />
+                <ScalarProperty Name="WB_deletedby" ColumnName="WB_deletedby" />
+                <ScalarProperty Name="WB_deleteddate" ColumnName="WB_deleteddate" />
+                <ScalarProperty Name="workflowFlg" ColumnName="workflowFlg" />
+                <ScalarProperty Name="San_Type" ColumnName="San_Type" />
+                <ScalarProperty Name="VesselRegistration" ColumnName="VesselRegistration" />
+                <ScalarProperty Name="VesselMMSI" ColumnName="VesselMMSI" />
+                <ScalarProperty Name="Callsign" ColumnName="Callsign" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Aircraft_SerialNumber" ColumnName="Aircraft_SerialNumber" />
+                <ScalarProperty Name="AircraftModel" ColumnName="AircraftModel" />
+                <ScalarProperty Name="Sonderstatus" ColumnName="Sonderstatus" />
+                <ScalarProperty Name="userResultAddr" ColumnName="userResultAddr" />
+                <ScalarProperty Name="UserResultQulle" ColumnName="UserResultQulle" />
+                <ScalarProperty Name="userResSanction" ColumnName="userResSanction" />
+                <ScalarProperty Name="userResultAltName" ColumnName="userResultAltName" />
+                <ScalarProperty Name="userResStatus" ColumnName="userResStatus" />
+                <ScalarProperty Name="TotalDaten" ColumnName="TotalDaten" />
+                <ScalarProperty Name="Schlagwort" ColumnName="Schlagwort" />
+                <ScalarProperty Name="Status_Anderung" ColumnName="Status_Anderung" />
+                <ScalarProperty Name="AktiveListen" ColumnName="AktiveListen" />
+                <ScalarProperty Name="typeId" ColumnName="typeId" />
+                <ScalarProperty Name="DowJonesReasons" ColumnName="DowJonesReasons" />
+                <ScalarProperty Name="whitelistApistatus" ColumnName="whitelistApistatus" />
+                <ScalarProperty Name="Exist_Dowjones_Reason" ColumnName="Exist_Dowjones_Reason" />
+                <ScalarProperty Name="apiseracheddata" ColumnName="apiseracheddata" />
+                <ScalarProperty Name="Wf_Autoupdatestatus" ColumnName="Wf_Autoupdatestatus" />
+                <ScalarProperty Name="Scorepercentage" ColumnName="Scorepercentage" />
+                <ScalarProperty Name="sanTransaction" ColumnName="sanTransaction" />
+                <ScalarProperty Name="Sondstatus_text" ColumnName="Sondstatus_text" />
+                <ScalarProperty Name="Transaction_dj" ColumnName="Transaction_dj" />
+                <ScalarProperty Name="Bemerkung" ColumnName="Bemerkung" />
+                <ScalarProperty Name="sender" ColumnName="sender" />
+                <ScalarProperty Name="SanMatchword" ColumnName="SanMatchword" />
+                <ScalarProperty Name="history" ColumnName="history" />
+                <ScalarProperty Name="unique_mandantid" ColumnName="unique_mandantid" />
+                <ScalarProperty Name="searchtype_dj" ColumnName="searchtype_dj" />
+                <ScalarProperty Name="Result_Country" ColumnName="Result_Country" />
+                <ScalarProperty Name="SWIFTCode" ColumnName="SWIFTCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Selected_Users">
+            <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.Selected_Users">
+              <MappingFragment StoreEntitySet="Selected_Users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="MandantID" ColumnName="MandantID" />
+                <ScalarProperty Name="Operating_mode" ColumnName="Operating_mode" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="Accountname" ColumnName="Accountname" />
+                <ScalarProperty Name="User_Role" ColumnName="User_Role" />
+                <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+                <ScalarProperty Name="Mandant_Name" ColumnName="Mandant_Name" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="OTP_Verified" ColumnName="OTP_Verified" />
+                <ScalarProperty Name="consigneeTin" ColumnName="consigneeTin" />
+                <ScalarProperty Name="User_Image" ColumnName="User_Image" />
+                <ScalarProperty Name="alt_select_lan" ColumnName="alt_select_lan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Userthreshold">
+            <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.Userthreshold">
+              <MappingFragment StoreEntitySet="Userthreshold">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="NamePercentage" ColumnName="NamePercentage" />
+                <ScalarProperty Name="StreetPercentage" ColumnName="StreetPercentage" />
+                <ScalarProperty Name="CityPercentage" ColumnName="CityPercentage" />
+                <ScalarProperty Name="MandantId" ColumnName="MandantId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="updateddate" ColumnName="updateddate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="evv_startdate" ColumnName="evv_startdate" />
+                <ScalarProperty Name="evv_endate" ColumnName="evv_endate" />
+                <ScalarProperty Name="Contain_Search" ColumnName="Contain_Search" />
+                <ScalarProperty Name="Normal_Search" ColumnName="Normal_Search" />
+                <ScalarProperty Name="evv_reset_startdate" ColumnName="evv_reset_startdate" />
+                <ScalarProperty Name="evv_ResetEndDate" ColumnName="evv_ResetEndDate" />
+                <ScalarProperty Name="evv_imp_startdate" ColumnName="evv_imp_startdate" />
+                <ScalarProperty Name="evv_imp_enddate" ColumnName="evv_imp_enddate" />
+                <ScalarProperty Name="dispsettings" ColumnName="dispsettings" />
+                <ScalarProperty Name="Dow_Jones" ColumnName="Dow_Jones" />
+                <ScalarProperty Name="EvvDisplaySetting" ColumnName="EvvDisplaySetting" />
+                <ScalarProperty Name="EvvFuzzy" ColumnName="EvvFuzzy" />
+                <ScalarProperty Name="EdecDisplaySetting" ColumnName="EdecDisplaySetting" />
+                <ScalarProperty Name="EdecFuzzy" ColumnName="EdecFuzzy" />
+                <ScalarProperty Name="ApiDisplaySetting" ColumnName="ApiDisplaySetting" />
+                <ScalarProperty Name="ApiFuzzy" ColumnName="ApiFuzzy" />
+                <ScalarProperty Name="Scorepercentage" ColumnName="Scorepercentage" />
+                <ScalarProperty Name="edec_date" ColumnName="edec_date" />
+                <ScalarProperty Name="SanApi_date" ColumnName="SanApi_date" />
+                <ScalarProperty Name="edec_Score" ColumnName="edec_Score" />
+                <ScalarProperty Name="SanApi_Score" ColumnName="SanApi_Score" />
+                <ScalarProperty Name="evv_Active" ColumnName="evv_Active" />
+                <ScalarProperty Name="edec_Active" ColumnName="edec_Active" />
+                <ScalarProperty Name="sanApi_Active" ColumnName="sanApi_Active" />
+                <ScalarProperty Name="Transaktion" ColumnName="Transaktion" />
+                <ScalarProperty Name="unique_mandantid" ColumnName="unique_mandantid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

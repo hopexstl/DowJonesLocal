@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SanScreen_Trade_MonkeyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CountryMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="CountryNameCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CountryName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="dwjRegion" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="SanScreen_Trade_MonkeyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" />
+  </EntityContainer>
+</Schema>

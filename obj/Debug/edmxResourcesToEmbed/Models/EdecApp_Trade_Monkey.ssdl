@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EdecApp_Trade_MonkeyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Dowjones_Record_Setting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Total_Count" Type="int" />
+    <Property Name="Remaining_Count" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="Creared_by" Type="nvarchar" MaxLength="250" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Modified_By" Type="nvarchar" MaxLength="250" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Mandantid" Type="int" />
+    <Property Name="Mandant_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="SearchStatus" Type="varchar" MaxLength="100" />
+    <Property Name="used_count" Type="int" />
+  </EntityType>
+  <EntityType Name="Error_Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Accountno" Type="nvarchar" MaxLength="150" />
+    <Property Name="Requstertin" Type="nvarchar" MaxLength="150" />
+    <Property Name="Mandant_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Mandant_Id" Type="bigint" />
+    <Property Name="Error_Messages" Type="varchar(max)" />
+    <Property Name="Doc_Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Date_Created" Type="date" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="120" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SearchLookup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferenceNumber" Type="varchar" MaxLength="150" />
+    <Property Name="MandantId" Type="varchar" MaxLength="150" />
+    <Property Name="UserName" Type="varchar(max)" />
+    <Property Name="search_keyword" Type="nvarchar(max)" />
+    <Property Name="Street" Type="nvarchar(max)" />
+    <Property Name="Ort" Type="nvarchar" MaxLength="250" />
+    <Property Name="Plz" Type="nvarchar" MaxLength="250" />
+    <Property Name="Land" Type="nvarchar" MaxLength="300" />
+    <Property Name="listStatus" Type="varchar" MaxLength="250" />
+    <Property Name="Reasons" Type="varchar(max)" />
+    <Property Name="SalseTaxId" Type="varchar" MaxLength="250" />
+    <Property Name="UserWhiteSearchStatus" Type="varchar" MaxLength="250" />
+    <Property Name="statusInApplication" Type="varchar" MaxLength="250" />
+    <Property Name="statusInUser" Type="varchar" MaxLength="250" />
+    <Property Name="searchedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="250" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="Status" Type="varchar" MaxLength="250" />
+    <Property Name="MandantName" Type="nvarchar(max)" />
+    <Property Name="batchname" Type="nvarchar" MaxLength="200" />
+    <Property Name="deleteStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResultList" Type="nvarchar(max)" />
+    <Property Name="ResultListDisp" Type="nvarchar(max)" />
+    <Property Name="eVVreset" Type="bit" />
+    <Property Name="gep_List" Type="nvarchar(max)" />
+    <Property Name="WLsearchdate" Type="datetime" />
+    <Property Name="ExistingWl" Type="varchar" MaxLength="10" />
+    <Property Name="File_Mode" Type="int" />
+    <Property Name="ResultXml" Type="nvarchar(max)" />
+    <Property Name="searchtype" Type="nvarchar" MaxLength="100" />
+    <Property Name="batchid" Type="nvarchar" MaxLength="200" />
+    <Property Name="SAN" Type="varchar" MaxLength="50" />
+    <Property Name="dowjones" Type="nvarchar(max)" />
+    <Property Name="dowjones_RecStatus" Type="varchar" MaxLength="50" />
+    <Property Name="User_Responsexml" Type="nvarchar(max)" />
+    <Property Name="SanList" Type="nvarchar(max)" />
+    <Property Name="SanListIndi" Type="nvarchar(max)" />
+    <Property Name="Fuzzyquality" Type="nvarchar" MaxLength="100" />
+    <Property Name="Exist_Reason" Type="nvarchar(max)" />
+    <Property Name="WB_deletedby" Type="nvarchar(max)" />
+    <Property Name="WB_deleteddate" Type="datetime" />
+    <Property Name="workflowFlg" Type="int" />
+    <Property Name="San_Type" Type="nvarchar" MaxLength="200" />
+    <Property Name="VesselRegistration" Type="nvarchar" MaxLength="500" />
+    <Property Name="VesselMMSI" Type="nvarchar" MaxLength="500" />
+    <Property Name="Callsign" Type="nvarchar" MaxLength="500" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="Aircraft_SerialNumber" Type="nvarchar" MaxLength="300" />
+    <Property Name="AircraftModel" Type="nvarchar" MaxLength="300" />
+    <Property Name="Sonderstatus" Type="nvarchar(max)" />
+    <Property Name="userResultAddr" Type="nvarchar(max)" />
+    <Property Name="UserResultQulle" Type="nvarchar(max)" />
+    <Property Name="userResSanction" Type="nvarchar(max)" />
+    <Property Name="userResultAltName" Type="nvarchar(max)" />
+    <Property Name="userResStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalDaten" Type="int" />
+    <Property Name="Schlagwort" Type="nvarchar" MaxLength="40" />
+    <Property Name="Status_Anderung" Type="nvarchar" MaxLength="40" />
+    <Property Name="AktiveListen" Type="nvarchar(max)" />
+    <Property Name="typeId" Type="nvarchar" MaxLength="500" />
+    <Property Name="DowJonesReasons" Type="varchar(max)" />
+    <Property Name="whitelistApistatus" Type="varchar" MaxLength="300" />
+    <Property Name="Exist_Dowjones_Reason" Type="varchar(max)" />
+    <Property Name="apiseracheddata" Type="varchar" MaxLength="100" />
+    <Property Name="Wf_Autoupdatestatus" Type="varchar" MaxLength="100" />
+    <Property Name="Scorepercentage" Type="nvarchar" MaxLength="40" />
+    <Property Name="sanTransaction" Type="nvarchar(max)" />
+    <Property Name="Sondstatus_text" Type="nvarchar(max)" />
+    <Property Name="Transaction_dj" Type="nvarchar(max)" />
+    <Property Name="Bemerkung" Type="nvarchar(max)" />
+    <Property Name="sender" Type="nvarchar(max)" />
+    <Property Name="SanMatchword" Type="nvarchar(max)" />
+    <Property Name="history" Type="nvarchar(max)" />
+    <Property Name="unique_mandantid" Type="int" />
+    <Property Name="searchtype_dj" Type="varchar" MaxLength="250" />
+    <Property Name="Result_Country" Type="nvarchar(max)" />
+    <Property Name="SWIFTCode" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Selected_Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="varchar(max)" />
+    <Property Name="MandantID" Type="int" />
+    <Property Name="Operating_mode" Type="int" />
+    <Property Name="Client_ID" Type="int" />
+    <Property Name="Accountname" Type="varchar(max)" />
+    <Property Name="User_Role" Type="varchar" MaxLength="20" />
+    <Property Name="LoginTime" Type="datetime" />
+    <Property Name="Mandant_Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Username" Type="nvarchar" MaxLength="250" />
+    <Property Name="OTP_Verified" Type="int" />
+    <Property Name="consigneeTin" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_Image" Type="nvarchar(max)" />
+    <Property Name="alt_select_lan" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Userthreshold">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NamePercentage" Type="nvarchar" MaxLength="250" />
+    <Property Name="StreetPercentage" Type="nvarchar" MaxLength="250" />
+    <Property Name="CityPercentage" Type="nvarchar" MaxLength="250" />
+    <Property Name="MandantId" Type="nvarchar" MaxLength="300" />
+    <Property Name="UserId" Type="nvarchar(max)" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="updateddate" Type="datetime" />
+    <Property Name="status" Type="bit" />
+    <Property Name="evv_startdate" Type="datetime" />
+    <Property Name="evv_endate" Type="datetime" />
+    <Property Name="Contain_Search" Type="bit" />
+    <Property Name="Normal_Search" Type="bit" />
+    <Property Name="evv_reset_startdate" Type="datetime" />
+    <Property Name="evv_ResetEndDate" Type="datetime" />
+    <Property Name="evv_imp_startdate" Type="datetime" />
+    <Property Name="evv_imp_enddate" Type="datetime" />
+    <Property Name="dispsettings" Type="varchar" MaxLength="500" />
+    <Property Name="Dow_Jones" Type="varchar" MaxLength="50" />
+    <Property Name="EvvDisplaySetting" Type="varchar" MaxLength="500" />
+    <Property Name="EvvFuzzy" Type="nvarchar" MaxLength="250" />
+    <Property Name="EdecDisplaySetting" Type="varchar" MaxLength="500" />
+    <Property Name="EdecFuzzy" Type="nvarchar" MaxLength="250" />
+    <Property Name="ApiDisplaySetting" Type="varchar" MaxLength="500" />
+    <Property Name="ApiFuzzy" Type="nvarchar" MaxLength="250" />
+    <Property Name="Scorepercentage" Type="nvarchar" MaxLength="40" />
+    <Property Name="edec_date" Type="datetime" />
+    <Property Name="SanApi_date" Type="datetime" />
+    <Property Name="edec_Score" Type="nvarchar" MaxLength="40" />
+    <Property Name="SanApi_Score" Type="nvarchar" MaxLength="40" />
+    <Property Name="evv_Active" Type="varchar" MaxLength="10" />
+    <Property Name="edec_Active" Type="varchar" MaxLength="40" />
+    <Property Name="sanApi_Active" Type="varchar" MaxLength="40" />
+    <Property Name="Transaktion" Type="nvarchar(max)" />
+    <Property Name="unique_mandantid" Type="int" />
+  </EntityType>
+  <EntityContainer Name="EdecApp_Trade_MonkeyModelStoreContainer">
+    <EntitySet Name="Dowjones_Record_Setting" EntityType="Self.Dowjones_Record_Setting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Error_Log" EntityType="Self.Error_Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SearchLookup" EntityType="Self.SearchLookup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Selected_Users" EntityType="Self.Selected_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Userthreshold" EntityType="Self.Userthreshold" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

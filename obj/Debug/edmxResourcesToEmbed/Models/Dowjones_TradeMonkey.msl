@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dowjones_TrademonkeyModelStoreContainer" CdmEntityContainer="dowjones_TrademonkeyEntities2">
+    <EntitySetMapping Name="dowjones_Search_Config_Single_Search">
+      <EntityTypeMapping TypeName="dowjones_TrademonkeyModel.dowjones_Search_Config_Single_Search">
+        <MappingFragment StoreEntitySet="dowjones_Search_Config_Single_Search">
+          <ScalarProperty Name="SearchID" ColumnName="SearchID" />
+          <ScalarProperty Name="MentodId" ColumnName="MentodId" />
+          <ScalarProperty Name="NameSearch" ColumnName="NameSearch" />
+          <ScalarProperty Name="PersonSearch" ColumnName="PersonSearch" />
+          <ScalarProperty Name="EnitySearch" ColumnName="EnitySearch" />
+          <ScalarProperty Name="IDTypeSearch" ColumnName="IDTypeSearch" />
+          <ScalarProperty Name="Config_Date" ColumnName="Config_Date" />
+          <ScalarProperty Name="SearchType" ColumnName="SearchType" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dowjones_Search_Result_Details">
+      <EntityTypeMapping TypeName="dowjones_TrademonkeyModel.dowjones_Search_Result_Details">
+        <MappingFragment StoreEntitySet="dowjones_Search_Result_Details">
+          <ScalarProperty Name="MentodId" ColumnName="MentodId" />
+          <ScalarProperty Name="metacount" ColumnName="metacount" />
+          <ScalarProperty Name="Iteraion" ColumnName="Iteraion" />
+          <ScalarProperty Name="PEid" ColumnName="PEid" />
+          <ScalarProperty Name="sType" ColumnName="sType" />
+          <ScalarProperty Name="attrType" ColumnName="attrType" />
+          <ScalarProperty Name="attrPrimary_name" ColumnName="attrPrimary_name" />
+          <ScalarProperty Name="attrTitle" ColumnName="attrTitle" />
+          <ScalarProperty Name="attrCountryterritorycode" ColumnName="attrCountryterritorycode" />
+          <ScalarProperty Name="attrCountry_territory_name" ColumnName="attrCountry_territory_name" />
+          <ScalarProperty Name="attrGender" ColumnName="attrGender" />
+          <ScalarProperty Name="attrScore" ColumnName="attrScore" />
+          <ScalarProperty Name="attrIcon_hints" ColumnName="attrIcon_hints" />
+          <ScalarProperty Name="atteCountries_territories" ColumnName="atteCountries_territories" />
+          <ScalarProperty Name="attrdate_of_birth" ColumnName="attrdate_of_birth" />
+          <ScalarProperty Name="Searchoption" ColumnName="Searchoption" />
+          <ScalarProperty Name="SearchKeyword" ColumnName="SearchKeyword" />
+          <ScalarProperty Name="SearchType" ColumnName="SearchType" />
+          <ScalarProperty Name="SearchContentSet" ColumnName="SearchContentSet" />
+          <ScalarProperty Name="SearchRecordType" ColumnName="SearchRecordType" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="SearchResult" ColumnName="SearchResult" />
+          <ScalarProperty Name="SearchWay" ColumnName="SearchWay" />
+          <ScalarProperty Name="FoundStatus" ColumnName="FoundStatus" />
+          <ScalarProperty Name="BatchName" ColumnName="BatchName" />
+          <ScalarProperty Name="SearchAutoID" ColumnName="SearchAutoID" />
+          <ScalarProperty Name="SearchRegin" ColumnName="SearchRegin" />
+          <ScalarProperty Name="SearchUniqueID" ColumnName="SearchUniqueID" />
+          <ScalarProperty Name="searchdate" ColumnName="searchdate" />
+          <ScalarProperty Name="attraltername" ColumnName="attraltername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="downjonws_check_countrylist">
+      <EntityTypeMapping TypeName="dowjones_TrademonkeyModel.downjonws_check_countrylist">
+        <MappingFragment StoreEntitySet="downjonws_check_countrylist">
+          <ScalarProperty Name="MasterName" ColumnName="MasterName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descriptor" ColumnName="descriptor" />
+          <ScalarProperty Name="iso_alpha2" ColumnName="iso_alpha2" />
+          <ScalarProperty Name="iso_alpha3" ColumnName="iso_alpha3" />
+          <ScalarProperty Name="downjonws_flag" ColumnName="downjonws_flag" />
+          <ScalarProperty Name="Unique_ID" ColumnName="Unique_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

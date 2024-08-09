@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EdecApp_Trade_MonkeyModelStoreContainer" CdmEntityContainer="EdecApp_Trade_MonkeyEntities">
+    <EntitySetMapping Name="Dowjones_Record_Setting">
+      <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.Dowjones_Record_Setting">
+        <MappingFragment StoreEntitySet="Dowjones_Record_Setting">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Total_Count" ColumnName="Total_Count" />
+          <ScalarProperty Name="Remaining_Count" ColumnName="Remaining_Count" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Creared_by" ColumnName="Creared_by" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Mandantid" ColumnName="Mandantid" />
+          <ScalarProperty Name="Mandant_name" ColumnName="Mandant_name" />
+          <ScalarProperty Name="SearchStatus" ColumnName="SearchStatus" />
+          <ScalarProperty Name="used_count" ColumnName="used_count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Error_Log">
+      <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.Error_Log">
+        <MappingFragment StoreEntitySet="Error_Log">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Accountno" ColumnName="Accountno" />
+          <ScalarProperty Name="Requstertin" ColumnName="Requstertin" />
+          <ScalarProperty Name="Mandant_Name" ColumnName="Mandant_Name" />
+          <ScalarProperty Name="Mandant_Id" ColumnName="Mandant_Id" />
+          <ScalarProperty Name="Error_Messages" ColumnName="Error_Messages" />
+          <ScalarProperty Name="Doc_Type" ColumnName="Doc_Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date_Created" ColumnName="Date_Created" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SearchLookup">
+      <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.SearchLookup">
+        <MappingFragment StoreEntitySet="SearchLookup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+          <ScalarProperty Name="MandantId" ColumnName="MandantId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="search_keyword" ColumnName="search_keyword" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Ort" ColumnName="Ort" />
+          <ScalarProperty Name="Plz" ColumnName="Plz" />
+          <ScalarProperty Name="Land" ColumnName="Land" />
+          <ScalarProperty Name="listStatus" ColumnName="listStatus" />
+          <ScalarProperty Name="Reasons" ColumnName="Reasons" />
+          <ScalarProperty Name="SalseTaxId" ColumnName="SalseTaxId" />
+          <ScalarProperty Name="UserWhiteSearchStatus" ColumnName="UserWhiteSearchStatus" />
+          <ScalarProperty Name="statusInApplication" ColumnName="statusInApplication" />
+          <ScalarProperty Name="statusInUser" ColumnName="statusInUser" />
+          <ScalarProperty Name="searchedDate" ColumnName="searchedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="MandantName" ColumnName="MandantName" />
+          <ScalarProperty Name="batchname" ColumnName="batchname" />
+          <ScalarProperty Name="deleteStatus" ColumnName="deleteStatus" />
+          <ScalarProperty Name="ResultList" ColumnName="ResultList" />
+          <ScalarProperty Name="ResultListDisp" ColumnName="ResultListDisp" />
+          <ScalarProperty Name="eVVreset" ColumnName="eVVreset" />
+          <ScalarProperty Name="gep_List" ColumnName="gep_List" />
+          <ScalarProperty Name="WLsearchdate" ColumnName="WLsearchdate" />
+          <ScalarProperty Name="ExistingWl" ColumnName="ExistingWl" />
+          <ScalarProperty Name="File_Mode" ColumnName="File_Mode" />
+          <ScalarProperty Name="ResultXml" ColumnName="ResultXml" />
+          <ScalarProperty Name="searchtype" ColumnName="searchtype" />
+          <ScalarProperty Name="batchid" ColumnName="batchid" />
+          <ScalarProperty Name="SAN" ColumnName="SAN" />
+          <ScalarProperty Name="dowjones" ColumnName="dowjones" />
+          <ScalarProperty Name="dowjones_RecStatus" ColumnName="dowjones_RecStatus" />
+          <ScalarProperty Name="User_Responsexml" ColumnName="User_Responsexml" />
+          <ScalarProperty Name="SanList" ColumnName="SanList" />
+          <ScalarProperty Name="SanListIndi" ColumnName="SanListIndi" />
+          <ScalarProperty Name="Fuzzyquality" ColumnName="Fuzzyquality" />
+          <ScalarProperty Name="Exist_Reason" ColumnName="Exist_Reason" />
+          <ScalarProperty Name="WB_deletedby" ColumnName="WB_deletedby" />
+          <ScalarProperty Name="WB_deleteddate" ColumnName="WB_deleteddate" />
+          <ScalarProperty Name="workflowFlg" ColumnName="workflowFlg" />
+          <ScalarProperty Name="San_Type" ColumnName="San_Type" />
+          <ScalarProperty Name="VesselRegistration" ColumnName="VesselRegistration" />
+          <ScalarProperty Name="VesselMMSI" ColumnName="VesselMMSI" />
+          <ScalarProperty Name="Callsign" ColumnName="Callsign" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Aircraft_SerialNumber" ColumnName="Aircraft_SerialNumber" />
+          <ScalarProperty Name="AircraftModel" ColumnName="AircraftModel" />
+          <ScalarProperty Name="Sonderstatus" ColumnName="Sonderstatus" />
+          <ScalarProperty Name="userResultAddr" ColumnName="userResultAddr" />
+          <ScalarProperty Name="UserResultQulle" ColumnName="UserResultQulle" />
+          <ScalarProperty Name="userResSanction" ColumnName="userResSanction" />
+          <ScalarProperty Name="userResultAltName" ColumnName="userResultAltName" />
+          <ScalarProperty Name="userResStatus" ColumnName="userResStatus" />
+          <ScalarProperty Name="TotalDaten" ColumnName="TotalDaten" />
+          <ScalarProperty Name="Schlagwort" ColumnName="Schlagwort" />
+          <ScalarProperty Name="Status_Anderung" ColumnName="Status_Anderung" />
+          <ScalarProperty Name="AktiveListen" ColumnName="AktiveListen" />
+          <ScalarProperty Name="typeId" ColumnName="typeId" />
+          <ScalarProperty Name="DowJonesReasons" ColumnName="DowJonesReasons" />
+          <ScalarProperty Name="whitelistApistatus" ColumnName="whitelistApistatus" />
+          <ScalarProperty Name="Exist_Dowjones_Reason" ColumnName="Exist_Dowjones_Reason" />
+          <ScalarProperty Name="apiseracheddata" ColumnName="apiseracheddata" />
+          <ScalarProperty Name="Wf_Autoupdatestatus" ColumnName="Wf_Autoupdatestatus" />
+          <ScalarProperty Name="Scorepercentage" ColumnName="Scorepercentage" />
+          <ScalarProperty Name="sanTransaction" ColumnName="sanTransaction" />
+          <ScalarProperty Name="Sondstatus_text" ColumnName="Sondstatus_text" />
+          <ScalarProperty Name="Transaction_dj" ColumnName="Transaction_dj" />
+          <ScalarProperty Name="Bemerkung" ColumnName="Bemerkung" />
+          <ScalarProperty Name="sender" ColumnName="sender" />
+          <ScalarProperty Name="SanMatchword" ColumnName="SanMatchword" />
+          <ScalarProperty Name="history" ColumnName="history" />
+          <ScalarProperty Name="unique_mandantid" ColumnName="unique_mandantid" />
+          <ScalarProperty Name="searchtype_dj" ColumnName="searchtype_dj" />
+          <ScalarProperty Name="Result_Country" ColumnName="Result_Country" />
+          <ScalarProperty Name="SWIFTCode" ColumnName="SWIFTCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Selected_Users">
+      <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.Selected_Users">
+        <MappingFragment StoreEntitySet="Selected_Users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MandantID" ColumnName="MandantID" />
+          <ScalarProperty Name="Operating_mode" ColumnName="Operating_mode" />
+          <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+          <ScalarProperty Name="Accountname" ColumnName="Accountname" />
+          <ScalarProperty Name="User_Role" ColumnName="User_Role" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+          <ScalarProperty Name="Mandant_Name" ColumnName="Mandant_Name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="OTP_Verified" ColumnName="OTP_Verified" />
+          <ScalarProperty Name="consigneeTin" ColumnName="consigneeTin" />
+          <ScalarProperty Name="User_Image" ColumnName="User_Image" />
+          <ScalarProperty Name="alt_select_lan" ColumnName="alt_select_lan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Userthreshold">
+      <EntityTypeMapping TypeName="EdecApp_Trade_MonkeyModel.Userthreshold">
+        <MappingFragment StoreEntitySet="Userthreshold">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="NamePercentage" ColumnName="NamePercentage" />
+          <ScalarProperty Name="StreetPercentage" ColumnName="StreetPercentage" />
+          <ScalarProperty Name="CityPercentage" ColumnName="CityPercentage" />
+          <ScalarProperty Name="MandantId" ColumnName="MandantId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="updateddate" ColumnName="updateddate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="evv_startdate" ColumnName="evv_startdate" />
+          <ScalarProperty Name="evv_endate" ColumnName="evv_endate" />
+          <ScalarProperty Name="Contain_Search" ColumnName="Contain_Search" />
+          <ScalarProperty Name="Normal_Search" ColumnName="Normal_Search" />
+          <ScalarProperty Name="evv_reset_startdate" ColumnName="evv_reset_startdate" />
+          <ScalarProperty Name="evv_ResetEndDate" ColumnName="evv_ResetEndDate" />
+          <ScalarProperty Name="evv_imp_startdate" ColumnName="evv_imp_startdate" />
+          <ScalarProperty Name="evv_imp_enddate" ColumnName="evv_imp_enddate" />
+          <ScalarProperty Name="dispsettings" ColumnName="dispsettings" />
+          <ScalarProperty Name="Dow_Jones" ColumnName="Dow_Jones" />
+          <ScalarProperty Name="EvvDisplaySetting" ColumnName="EvvDisplaySetting" />
+          <ScalarProperty Name="EvvFuzzy" ColumnName="EvvFuzzy" />
+          <ScalarProperty Name="EdecDisplaySetting" ColumnName="EdecDisplaySetting" />
+          <ScalarProperty Name="EdecFuzzy" ColumnName="EdecFuzzy" />
+          <ScalarProperty Name="ApiDisplaySetting" ColumnName="ApiDisplaySetting" />
+          <ScalarProperty Name="ApiFuzzy" ColumnName="ApiFuzzy" />
+          <ScalarProperty Name="Scorepercentage" ColumnName="Scorepercentage" />
+          <ScalarProperty Name="edec_date" ColumnName="edec_date" />
+          <ScalarProperty Name="SanApi_date" ColumnName="SanApi_date" />
+          <ScalarProperty Name="edec_Score" ColumnName="edec_Score" />
+          <ScalarProperty Name="SanApi_Score" ColumnName="SanApi_Score" />
+          <ScalarProperty Name="evv_Active" ColumnName="evv_Active" />
+          <ScalarProperty Name="edec_Active" ColumnName="edec_Active" />
+          <ScalarProperty Name="sanApi_Active" ColumnName="sanApi_Active" />
+          <ScalarProperty Name="Transaktion" ColumnName="Transaktion" />
+          <ScalarProperty Name="unique_mandantid" ColumnName="unique_mandantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

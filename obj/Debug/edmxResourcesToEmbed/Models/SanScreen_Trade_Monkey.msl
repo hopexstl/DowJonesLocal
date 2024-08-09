@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SanScreen_Trade_MonkeyModelStoreContainer" CdmEntityContainer="SanScreen_Trade_MonkeyEntities">
+    <EntitySetMapping Name="CountryMaster">
+      <EntityTypeMapping TypeName="SanScreen_Trade_MonkeyModel.CountryMaster">
+        <MappingFragment StoreEntitySet="CountryMaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CountryNameCode" ColumnName="CountryNameCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dwjRegion" ColumnName="dwjRegion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

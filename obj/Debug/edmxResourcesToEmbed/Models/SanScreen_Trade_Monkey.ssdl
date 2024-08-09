@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SanScreen_Trade_MonkeyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SanScreen_Trade_Monkey.dbo.CountryMaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CountryMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="CountryNameCode" Type="nvarchar" MaxLength="500" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="250" />
+    <Property Name="status" Type="nvarchar" MaxLength="10" />
+    <Property Name="dwjRegion" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityContainer Name="SanScreen_Trade_MonkeyModelStoreContainer">
+    <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CountryMaster].[id] AS [id], 
+    [CountryMaster].[CountryNameCode] AS [CountryNameCode], 
+    [CountryMaster].[CountryName] AS [CountryName], 
+    [CountryMaster].[CountryCode] AS [CountryCode], 
+    [CountryMaster].[status] AS [status], 
+    [CountryMaster].[dwjRegion] AS [dwjRegion]
+    FROM [dbo].[CountryMaster] AS [CountryMaster]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

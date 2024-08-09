@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dowjones_TrademonkeyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dowjones_Search_Config_Single_Search">
+          <Key>
+            <PropertyRef Name="SearchID" />
+          </Key>
+          <Property Name="SearchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MentodId" Type="varchar" MaxLength="50" />
+          <Property Name="NameSearch" Type="nvarchar(max)" />
+          <Property Name="PersonSearch" Type="nvarchar(max)" />
+          <Property Name="EnitySearch" Type="nvarchar(max)" />
+          <Property Name="IDTypeSearch" Type="nvarchar(max)" />
+          <Property Name="Config_Date" Type="datetime" />
+          <Property Name="SearchType" Type="nvarchar" MaxLength="50" />
+          <Property Name="updated_date" Type="datetime" />
+          <Property Name="updated_by" Type="varchar(max)" />
+          <Property Name="created_by" Type="varchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dowjones_Trademonkey.dbo.dowjones_Search_Result_Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="dowjones_Search_Result_Details">
+          <Key>
+            <PropertyRef Name="SearchAutoID" />
+          </Key>
+          <Property Name="MentodId" Type="varchar" MaxLength="10" />
+          <Property Name="metacount" Type="int" />
+          <Property Name="Iteraion" Type="int" />
+          <Property Name="PEid" Type="varchar" MaxLength="15" />
+          <Property Name="sType" Type="varchar" MaxLength="100" />
+          <Property Name="attrType" Type="varchar" MaxLength="100" />
+          <Property Name="attrPrimary_name" Type="varchar" MaxLength="1000" />
+          <Property Name="attrTitle" Type="nvarchar" MaxLength="1000" />
+          <Property Name="attrCountryterritorycode" Type="nvarchar" MaxLength="500" />
+          <Property Name="attrCountry_territory_name" Type="nvarchar" MaxLength="500" />
+          <Property Name="attrGender" Type="varchar" MaxLength="10" />
+          <Property Name="attrScore" Type="varchar" MaxLength="10" />
+          <Property Name="attrIcon_hints" Type="varchar" MaxLength="100" />
+          <Property Name="atteCountries_territories" Type="nvarchar(max)" />
+          <Property Name="attrdate_of_birth" Type="nvarchar" MaxLength="500" />
+          <Property Name="Searchoption" Type="varchar" MaxLength="100" />
+          <Property Name="SearchKeyword" Type="nvarchar(max)" />
+          <Property Name="SearchType" Type="varchar" MaxLength="100" />
+          <Property Name="SearchContentSet" Type="varchar" MaxLength="100" />
+          <Property Name="SearchRecordType" Type="varchar" MaxLength="100" />
+          <Property Name="Pincode" Type="varchar" MaxLength="20" />
+          <Property Name="SearchResult" Type="nvarchar(max)" />
+          <Property Name="SearchWay" Type="varchar" MaxLength="100" />
+          <Property Name="FoundStatus" Type="varchar" MaxLength="20" />
+          <Property Name="BatchName" Type="nvarchar" MaxLength="200" />
+          <Property Name="SearchAutoID" Type="numeric" Precision="20" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SearchRegin" Type="nvarchar" MaxLength="200" />
+          <Property Name="SearchUniqueID" Type="numeric" Precision="20" Scale="0" />
+          <Property Name="searchdate" Type="datetime" />
+          <Property Name="attraltername" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dowjones_Trademonkey.dbo.downjonws_check_countrylist' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="downjonws_check_countrylist">
+          <Key>
+            <PropertyRef Name="Unique_ID" />
+          </Key>
+          <Property Name="MasterName" Type="varchar" MaxLength="100" />
+          <Property Name="id" Type="varchar" MaxLength="10" />
+          <Property Name="descriptor" Type="nvarchar" MaxLength="100" />
+          <Property Name="iso_alpha2" Type="varchar" MaxLength="10" />
+          <Property Name="iso_alpha3" Type="varchar" MaxLength="10" />
+          <Property Name="downjonws_flag" Type="varchar" MaxLength="50" />
+          <Property Name="Unique_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dowjones_TrademonkeyModelStoreContainer">
+          <EntitySet Name="dowjones_Search_Config_Single_Search" EntityType="Self.dowjones_Search_Config_Single_Search" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dowjones_Search_Result_Details" EntityType="Self.dowjones_Search_Result_Details" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[dowjones_Search_Result_Details].[MentodId] AS [MentodId], 
+[dowjones_Search_Result_Details].[metacount] AS [metacount], 
+[dowjones_Search_Result_Details].[Iteraion] AS [Iteraion], 
+[dowjones_Search_Result_Details].[PEid] AS [PEid], 
+[dowjones_Search_Result_Details].[sType] AS [sType], 
+[dowjones_Search_Result_Details].[attrType] AS [attrType], 
+[dowjones_Search_Result_Details].[attrPrimary_name] AS [attrPrimary_name], 
+[dowjones_Search_Result_Details].[attrTitle] AS [attrTitle], 
+[dowjones_Search_Result_Details].[attrCountryterritorycode] AS [attrCountryterritorycode], 
+[dowjones_Search_Result_Details].[attrCountry_territory_name] AS [attrCountry_territory_name], 
+[dowjones_Search_Result_Details].[attrGender] AS [attrGender], 
+[dowjones_Search_Result_Details].[attrScore] AS [attrScore], 
+[dowjones_Search_Result_Details].[attrIcon_hints] AS [attrIcon_hints], 
+[dowjones_Search_Result_Details].[atteCountries_territories] AS [atteCountries_territories], 
+[dowjones_Search_Result_Details].[attrdate_of_birth] AS [attrdate_of_birth], 
+[dowjones_Search_Result_Details].[Searchoption] AS [Searchoption], 
+[dowjones_Search_Result_Details].[SearchKeyword] AS [SearchKeyword], 
+[dowjones_Search_Result_Details].[SearchType] AS [SearchType], 
+[dowjones_Search_Result_Details].[SearchContentSet] AS [SearchContentSet], 
+[dowjones_Search_Result_Details].[SearchRecordType] AS [SearchRecordType], 
+[dowjones_Search_Result_Details].[Pincode] AS [Pincode], 
+[dowjones_Search_Result_Details].[SearchResult] AS [SearchResult], 
+[dowjones_Search_Result_Details].[SearchWay] AS [SearchWay], 
+[dowjones_Search_Result_Details].[FoundStatus] AS [FoundStatus], 
+[dowjones_Search_Result_Details].[BatchName] AS [BatchName], 
+[dowjones_Search_Result_Details].[SearchAutoID] AS [SearchAutoID], 
+[dowjones_Search_Result_Details].[SearchRegin] AS [SearchRegin], 
+[dowjones_Search_Result_Details].[SearchUniqueID] AS [SearchUniqueID], 
+[dowjones_Search_Result_Details].[searchdate] AS [searchdate], 
+[dowjones_Search_Result_Details].[attraltername] AS [attraltername]
+FROM [dbo].[dowjones_Search_Result_Details] AS [dowjones_Search_Result_Details]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="downjonws_check_countrylist" EntityType="Self.downjonws_check_countrylist" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[downjonws_check_countrylist].[MasterName] AS [MasterName], 
+[downjonws_check_countrylist].[id] AS [id], 
+[downjonws_check_countrylist].[descriptor] AS [descriptor], 
+[downjonws_check_countrylist].[iso_alpha2] AS [iso_alpha2], 
+[downjonws_check_countrylist].[iso_alpha3] AS [iso_alpha3], 
+[downjonws_check_countrylist].[downjonws_flag] AS [downjonws_flag], 
+[downjonws_check_countrylist].[Unique_ID] AS [Unique_ID]
+FROM [dbo].[downjonws_check_countrylist] AS [downjonws_check_countrylist]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dowjones_TrademonkeyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dowjones_Search_Config_Single_Search">
+          <Key>
+            <PropertyRef Name="SearchID" />
+          </Key>
+          <Property Name="SearchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MentodId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NameSearch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonSearch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EnitySearch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IDTypeSearch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Config_Date" Type="DateTime" Precision="3" />
+          <Property Name="SearchType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="updated_date" Type="DateTime" Precision="3" />
+          <Property Name="updated_by" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dowjones_Search_Result_Details">
+          <Key>
+            <PropertyRef Name="SearchAutoID" />
+          </Key>
+          <Property Name="MentodId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="metacount" Type="Int32" />
+          <Property Name="Iteraion" Type="Int32" />
+          <Property Name="PEid" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="sType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="attrType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="attrPrimary_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="attrTitle" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="attrCountryterritorycode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="attrCountry_territory_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="attrGender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="attrScore" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="attrIcon_hints" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="atteCountries_territories" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="attrdate_of_birth" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Searchoption" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SearchKeyword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SearchType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SearchContentSet" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SearchRecordType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pincode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SearchResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SearchWay" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FoundStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BatchName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SearchAutoID" Type="Decimal" Precision="20" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SearchRegin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SearchUniqueID" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="searchdate" Type="DateTime" Precision="3" />
+          <Property Name="attraltername" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="downjonws_check_countrylist">
+          <Key>
+            <PropertyRef Name="Unique_ID" />
+          </Key>
+          <Property Name="MasterName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="descriptor" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="iso_alpha2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="iso_alpha3" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="downjonws_flag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Unique_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityContainer Name="dowjones_TrademonkeyEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dowjones_Search_Config_Single_Search" EntityType="Self.dowjones_Search_Config_Single_Search" />
+          <EntitySet Name="dowjones_Search_Result_Details" EntityType="Self.dowjones_Search_Result_Details" />
+          <EntitySet Name="downjonws_check_countrylist" EntityType="Self.downjonws_check_countrylist" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dowjones_TrademonkeyModelStoreContainer" CdmEntityContainer="dowjones_TrademonkeyEntities2">
+          <EntitySetMapping Name="dowjones_Search_Config_Single_Search">
+            <EntityTypeMapping TypeName="dowjones_TrademonkeyModel.dowjones_Search_Config_Single_Search">
+              <MappingFragment StoreEntitySet="dowjones_Search_Config_Single_Search">
+                <ScalarProperty Name="SearchID" ColumnName="SearchID" />
+                <ScalarProperty Name="MentodId" ColumnName="MentodId" />
+                <ScalarProperty Name="NameSearch" ColumnName="NameSearch" />
+                <ScalarProperty Name="PersonSearch" ColumnName="PersonSearch" />
+                <ScalarProperty Name="EnitySearch" ColumnName="EnitySearch" />
+                <ScalarProperty Name="IDTypeSearch" ColumnName="IDTypeSearch" />
+                <ScalarProperty Name="Config_Date" ColumnName="Config_Date" />
+                <ScalarProperty Name="SearchType" ColumnName="SearchType" />
+                <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dowjones_Search_Result_Details">
+            <EntityTypeMapping TypeName="dowjones_TrademonkeyModel.dowjones_Search_Result_Details">
+              <MappingFragment StoreEntitySet="dowjones_Search_Result_Details">
+                <ScalarProperty Name="MentodId" ColumnName="MentodId" />
+                <ScalarProperty Name="metacount" ColumnName="metacount" />
+                <ScalarProperty Name="Iteraion" ColumnName="Iteraion" />
+                <ScalarProperty Name="PEid" ColumnName="PEid" />
+                <ScalarProperty Name="sType" ColumnName="sType" />
+                <ScalarProperty Name="attrType" ColumnName="attrType" />
+                <ScalarProperty Name="attrPrimary_name" ColumnName="attrPrimary_name" />
+                <ScalarProperty Name="attrTitle" ColumnName="attrTitle" />
+                <ScalarProperty Name="attrCountryterritorycode" ColumnName="attrCountryterritorycode" />
+                <ScalarProperty Name="attrCountry_territory_name" ColumnName="attrCountry_territory_name" />
+                <ScalarProperty Name="attrGender" ColumnName="attrGender" />
+                <ScalarProperty Name="attrScore" ColumnName="attrScore" />
+                <ScalarProperty Name="attrIcon_hints" ColumnName="attrIcon_hints" />
+                <ScalarProperty Name="atteCountries_territories" ColumnName="atteCountries_territories" />
+                <ScalarProperty Name="attrdate_of_birth" ColumnName="attrdate_of_birth" />
+                <ScalarProperty Name="Searchoption" ColumnName="Searchoption" />
+                <ScalarProperty Name="SearchKeyword" ColumnName="SearchKeyword" />
+                <ScalarProperty Name="SearchType" ColumnName="SearchType" />
+                <ScalarProperty Name="SearchContentSet" ColumnName="SearchContentSet" />
+                <ScalarProperty Name="SearchRecordType" ColumnName="SearchRecordType" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="SearchResult" ColumnName="SearchResult" />
+                <ScalarProperty Name="SearchWay" ColumnName="SearchWay" />
+                <ScalarProperty Name="FoundStatus" ColumnName="FoundStatus" />
+                <ScalarProperty Name="BatchName" ColumnName="BatchName" />
+                <ScalarProperty Name="SearchAutoID" ColumnName="SearchAutoID" />
+                <ScalarProperty Name="SearchRegin" ColumnName="SearchRegin" />
+                <ScalarProperty Name="SearchUniqueID" ColumnName="SearchUniqueID" />
+                <ScalarProperty Name="searchdate" ColumnName="searchdate" />
+                <ScalarProperty Name="attraltername" ColumnName="attraltername" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="downjonws_check_countrylist">
+            <EntityTypeMapping TypeName="dowjones_TrademonkeyModel.downjonws_check_countrylist">
+              <MappingFragment StoreEntitySet="downjonws_check_countrylist">
+                <ScalarProperty Name="MasterName" ColumnName="MasterName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descriptor" ColumnName="descriptor" />
+                <ScalarProperty Name="iso_alpha2" ColumnName="iso_alpha2" />
+                <ScalarProperty Name="iso_alpha3" ColumnName="iso_alpha3" />
+                <ScalarProperty Name="downjonws_flag" ColumnName="downjonws_flag" />
+                <ScalarProperty Name="Unique_ID" ColumnName="Unique_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,98 @@
+﻿@model DowJones.Models.RiskCompSearchResponseModel
+
+@{
+    ViewBag.Title = "Search Results";
+}
+
+<h2>Search Results</h2>
+
+@if (Model != null && Model.Data != null && Model.Data.Count > 0)
+{
+    <h3>Data</h3>
+    foreach (var dataItem in Model.Data)
+    {
+        <div>
+            <h4>Type: @dataItem.Type</h4>
+
+            <h5>Attributes</h5>
+            @if (dataItem.Attributes != null)
+            {
+                <div>
+                    <p><strong>Primary Name:</strong> @dataItem.Attributes.PrimaryName</p>
+                    <p><strong>Title:</strong> @dataItem.Attributes.Title</p>
+                    <p><strong>Country/Territory Code:</strong> @dataItem.Attributes.CountryTerritoryCode</p>
+                    <p><strong>Country/Territory Name:</strong> @dataItem.Attributes.CountryTerritoryName</p>
+                    <p><strong>Gender:</strong> @dataItem.Attributes.Gender</p>
+                    <p><strong>Is Subsidiary:</strong> @dataItem.Attributes.IsSubsidiary</p>
+                    <p><strong>Score:</strong> @dataItem.Attributes.Score</p>
+
+                    @if (dataItem.Attributes.CountriesTerritories != null && dataItem.Attributes.CountriesTerritories.Count > 0)
+                    {
+                        <div>
+                            <h6>Countries/Territories</h6>
+                            @foreach (var country in dataItem.Attributes.CountriesTerritories)
+                            {
+                                <div>
+                                    <p><strong>ISO Alpha-2:</strong> @country.IsoAlpha2</p>
+                                    <p><strong>ISO Alpha-3:</strong> @country.IsoAlpha3</p>
+                                    <p><strong>Type:</strong> @country.Type</p>
+                                    <p><strong>Code:</strong> @country.Code</p>
+                                </div>
+                            }
+                        </div>
+                    }
+
+                    @if (dataItem.Attributes.DateOfBirth != null && dataItem.Attributes.DateOfBirth.Count > 0)
+                    {
+                        <div>
+                            <h6>Date of Birth</h6>
+                            @foreach (var dob in dataItem.Attributes.DateOfBirth)
+                            {
+                                <p><strong>Day:</strong> @dob.Day</p>
+                                <p><strong>Month:</strong> @dob.Month</p>
+                                <p><strong>Year:</strong> @dob.Year</p>
+                            }
+                        </div>
+                    }
+
+                    @if (dataItem.Attributes.MatchedCriteria != null)
+                    {
+                        <div>
+                            <h6>Matched Criteria</h6>
+                            @if (dataItem.Attributes.MatchedCriteria.DateOfBirth != null)
+                            {
+                                <div>
+                                    <h6>Date of Birth</h6>
+                                    <p>Match Date of Birth Criteria</p>
+                                </div>
+                            }
+
+                            @if (dataItem.Attributes.MatchedCriteria.Name != null)
+                            {
+                                <div>
+                                    <h6>Name</h6>
+                                    <p><strong>Name:</strong> @dataItem.Attributes.MatchedCriteria.Name.Name</p>
+                                </div>
+                            }
+
+                            @if (dataItem.Attributes.MatchedCriteria.Type != null)
+                            {
+                                <div>
+                                    <h6>Type</h6>
+                                    <p><strong>Type:</strong> @dataItem.Attributes.MatchedCriteria.Type.Type</p>
+                                    <p><strong>Is Linguistic Variation:</strong> @dataItem.Attributes.MatchedCriteria.Type.IsLinguisticVariation</p>
+                                    <p><strong>Is Non-Linguistic Variation:</strong> @dataItem.Attributes.MatchedCriteria.Type.IsNonLinguisticVariation</p>
+                                    <p><strong>Is Structural Variation:</strong> @dataItem.Attributes.MatchedCriteria.Type.IsStructuralVariation</p>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    }
+}
+else
+{
+    <p>No data available</p>
+}

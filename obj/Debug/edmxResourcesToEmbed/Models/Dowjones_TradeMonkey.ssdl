@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dowjones_TrademonkeyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="dowjones_Search_Config_Single_Search">
+    <Key>
+      <PropertyRef Name="SearchID" />
+    </Key>
+    <Property Name="SearchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MentodId" Type="varchar" MaxLength="50" />
+    <Property Name="NameSearch" Type="nvarchar(max)" />
+    <Property Name="PersonSearch" Type="nvarchar(max)" />
+    <Property Name="EnitySearch" Type="nvarchar(max)" />
+    <Property Name="IDTypeSearch" Type="nvarchar(max)" />
+    <Property Name="Config_Date" Type="datetime" />
+    <Property Name="SearchType" Type="nvarchar" MaxLength="50" />
+    <Property Name="updated_date" Type="datetime" />
+    <Property Name="updated_by" Type="varchar(max)" />
+    <Property Name="created_by" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dowjones_Trademonkey.dbo.dowjones_Search_Result_Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="dowjones_Search_Result_Details">
+    <Key>
+      <PropertyRef Name="SearchAutoID" />
+    </Key>
+    <Property Name="MentodId" Type="varchar" MaxLength="10" />
+    <Property Name="metacount" Type="int" />
+    <Property Name="Iteraion" Type="int" />
+    <Property Name="PEid" Type="varchar" MaxLength="15" />
+    <Property Name="sType" Type="varchar" MaxLength="100" />
+    <Property Name="attrType" Type="varchar" MaxLength="100" />
+    <Property Name="attrPrimary_name" Type="varchar" MaxLength="1000" />
+    <Property Name="attrTitle" Type="nvarchar" MaxLength="1000" />
+    <Property Name="attrCountryterritorycode" Type="nvarchar" MaxLength="500" />
+    <Property Name="attrCountry_territory_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="attrGender" Type="varchar" MaxLength="10" />
+    <Property Name="attrScore" Type="varchar" MaxLength="10" />
+    <Property Name="attrIcon_hints" Type="varchar" MaxLength="100" />
+    <Property Name="atteCountries_territories" Type="nvarchar(max)" />
+    <Property Name="attrdate_of_birth" Type="nvarchar" MaxLength="500" />
+    <Property Name="Searchoption" Type="varchar" MaxLength="100" />
+    <Property Name="SearchKeyword" Type="nvarchar(max)" />
+    <Property Name="SearchType" Type="varchar" MaxLength="100" />
+    <Property Name="SearchContentSet" Type="varchar" MaxLength="100" />
+    <Property Name="SearchRecordType" Type="varchar" MaxLength="100" />
+    <Property Name="Pincode" Type="varchar" MaxLength="20" />
+    <Property Name="SearchResult" Type="nvarchar(max)" />
+    <Property Name="SearchWay" Type="varchar" MaxLength="100" />
+    <Property Name="FoundStatus" Type="varchar" MaxLength="20" />
+    <Property Name="BatchName" Type="nvarchar" MaxLength="200" />
+    <Property Name="SearchAutoID" Type="numeric" Precision="20" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SearchRegin" Type="nvarchar" MaxLength="200" />
+    <Property Name="SearchUniqueID" Type="numeric" Precision="20" Scale="0" />
+    <Property Name="searchdate" Type="datetime" />
+    <Property Name="attraltername" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dowjones_Trademonkey.dbo.downjonws_check_countrylist' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="downjonws_check_countrylist">
+    <Key>
+      <PropertyRef Name="Unique_ID" />
+    </Key>
+    <Property Name="MasterName" Type="varchar" MaxLength="100" />
+    <Property Name="id" Type="varchar" MaxLength="10" />
+    <Property Name="descriptor" Type="nvarchar" MaxLength="100" />
+    <Property Name="iso_alpha2" Type="varchar" MaxLength="10" />
+    <Property Name="iso_alpha3" Type="varchar" MaxLength="10" />
+    <Property Name="downjonws_flag" Type="varchar" MaxLength="50" />
+    <Property Name="Unique_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="dowjones_TrademonkeyModelStoreContainer">
+    <EntitySet Name="dowjones_Search_Config_Single_Search" EntityType="Self.dowjones_Search_Config_Single_Search" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dowjones_Search_Result_Details" EntityType="Self.dowjones_Search_Result_Details" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[dowjones_Search_Result_Details].[MentodId] AS [MentodId], 
+[dowjones_Search_Result_Details].[metacount] AS [metacount], 
+[dowjones_Search_Result_Details].[Iteraion] AS [Iteraion], 
+[dowjones_Search_Result_Details].[PEid] AS [PEid], 
+[dowjones_Search_Result_Details].[sType] AS [sType], 
+[dowjones_Search_Result_Details].[attrType] AS [attrType], 
+[dowjones_Search_Result_Details].[attrPrimary_name] AS [attrPrimary_name], 
+[dowjones_Search_Result_Details].[attrTitle] AS [attrTitle], 
+[dowjones_Search_Result_Details].[attrCountryterritorycode] AS [attrCountryterritorycode], 
+[dowjones_Search_Result_Details].[attrCountry_territory_name] AS [attrCountry_territory_name], 
+[dowjones_Search_Result_Details].[attrGender] AS [attrGender], 
+[dowjones_Search_Result_Details].[attrScore] AS [attrScore], 
+[dowjones_Search_Result_Details].[attrIcon_hints] AS [attrIcon_hints], 
+[dowjones_Search_Result_Details].[atteCountries_territories] AS [atteCountries_territories], 
+[dowjones_Search_Result_Details].[attrdate_of_birth] AS [attrdate_of_birth], 
+[dowjones_Search_Result_Details].[Searchoption] AS [Searchoption], 
+[dowjones_Search_Result_Details].[SearchKeyword] AS [SearchKeyword], 
+[dowjones_Search_Result_Details].[SearchType] AS [SearchType], 
+[dowjones_Search_Result_Details].[SearchContentSet] AS [SearchContentSet], 
+[dowjones_Search_Result_Details].[SearchRecordType] AS [SearchRecordType], 
+[dowjones_Search_Result_Details].[Pincode] AS [Pincode], 
+[dowjones_Search_Result_Details].[SearchResult] AS [SearchResult], 
+[dowjones_Search_Result_Details].[SearchWay] AS [SearchWay], 
+[dowjones_Search_Result_Details].[FoundStatus] AS [FoundStatus], 
+[dowjones_Search_Result_Details].[BatchName] AS [BatchName], 
+[dowjones_Search_Result_Details].[SearchAutoID] AS [SearchAutoID], 
+[dowjones_Search_Result_Details].[SearchRegin] AS [SearchRegin], 
+[dowjones_Search_Result_Details].[SearchUniqueID] AS [SearchUniqueID], 
+[dowjones_Search_Result_Details].[searchdate] AS [searchdate], 
+[dowjones_Search_Result_Details].[attraltername] AS [attraltername]
+FROM [dbo].[dowjones_Search_Result_Details] AS [dowjones_Search_Result_Details]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="downjonws_check_countrylist" EntityType="Self.downjonws_check_countrylist" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[downjonws_check_countrylist].[MasterName] AS [MasterName], 
+[downjonws_check_countrylist].[id] AS [id], 
+[downjonws_check_countrylist].[descriptor] AS [descriptor], 
+[downjonws_check_countrylist].[iso_alpha2] AS [iso_alpha2], 
+[downjonws_check_countrylist].[iso_alpha3] AS [iso_alpha3], 
+[downjonws_check_countrylist].[downjonws_flag] AS [downjonws_flag], 
+[downjonws_check_countrylist].[Unique_ID] AS [Unique_ID]
+FROM [dbo].[downjonws_check_countrylist] AS [downjonws_check_countrylist]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
