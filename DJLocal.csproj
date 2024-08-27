@@ -162,6 +162,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AuthHelper.cs" />
+    <Compile Include="Helpers\DatabaseHelper.cs" />
+    <Compile Include="Helpers\LogicHelper.cs" />
+    <Compile Include="Helpers\QueryHelper.cs" />
+    <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Models\Admin_Mandant.cs">
       <DependentUpon>EdecAppTradeMonkey.tt</DependentUpon>
     </Compile>
@@ -349,7 +354,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Helpers\" />
+    <Folder Include="Views\DowJonesLegacy\" />
     <Folder Include="Views\Hamilton\" />
   </ItemGroup>
   <ItemGroup>
